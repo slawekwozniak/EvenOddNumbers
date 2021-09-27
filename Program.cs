@@ -6,10 +6,10 @@ namespace EvenOddNumbers
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Liczby parzyste i nieparzyste");
-            Console.WriteLine("Podaj liczbę całkowitą:");
+            Console.WriteLine("*** Liczby parzyste i nieparzyste ***");
             while (true)
             {
+                Console.WriteLine("\nPodaj liczbę całkowitą:");
                 if (int.TryParse(Console.ReadLine(), out int number))
                 {
                     if (number % 2 == 0)
@@ -17,11 +17,12 @@ namespace EvenOddNumbers
                     else
                         Console.WriteLine("Liczba nieparzysta");
 
-                    return;
+                    Console.WriteLine("Czy chcesz kontynuować? Jeśli tak to naciśnij \'T\'");
+                    if (Console.ReadLine().ToUpper() != "T") break;
                 }
                 else
                 {
-                    Console.WriteLine("\nWprowadzono niepoprawne dane. Podaj liczbę całkowitą:");
+                    Console.WriteLine("Wprowadzono niepoprawne dane.");
                 }
             }
         }
